@@ -4,23 +4,34 @@
 .c{max-width:420px}h1{font-size:22px}p{color:#5b6475}a{color:#1f6f5c}</style></head>
 <body><div class="c"><h1 id="t">Opening your school&rsquo;s Sarparast&hellip;</h1><p id="m">One moment.</p></div>
 <script>
+// page v2: checks the school answers before going there; while it is offline, keeps trying.
 (function () {
   var roles = { parent: 1, student: 1, staff: 1 };
   var role = new URLSearchParams(location.search).get('role');
   if (!roles[role]) role = '';
-  function fail() {
+  var tries = 0;
+  function offline() {
     document.getElementById('t').textContent = 'The school is offline right now';
-    document.getElementById('m').innerHTML = 'The school computer may be switched off or not connected. Please try again later.<br><a href="">Try again</a>';
+    document.getElementById('m').innerHTML = 'The school computer is switched off or not connected to the internet. '
+      + 'This page keeps trying and opens the school by itself as soon as it is back.<br><small>Checked ' + (++tries) + (tries === 1 ? ' time' : ' times') + '</small>';
+    setTimeout(attempt, 20000);
   }
-  function go(j) {
-    if (!j || !/^https:\/\/[a-z0-9.-]+(:\d+)?$/i.test(j.url)) return fail();
-    location.replace(j.url + '/#/login' + (role ? '?role=' + role : ''));
-  }
-  // The freshest copy is on GitHub's file server; if it is slow, use the copy beside this page.
   var get = function (u, ms) {
     var c = new AbortController(); setTimeout(function () { c.abort(); }, ms);
-    return fetch(u + '?t=' + Date.now(), { cache: 'no-store', signal: c.signal }).then(function (r) { if (!r.ok) throw 0; return r.json(); });
+    return fetch(u, { cache: 'no-store', signal: c.signal }).then(function (r) { if (!r.ok) throw 0; return r.json(); });
   };
-  get('https://raw.githubusercontent.com/babarsultan009/sarparast/main/docs/s/aff5f8f796/link.json', 4000).catch(function () { return get('link.json', 10000); }).then(go).catch(fail);
+  function attempt() {
+    // The freshest address is on GitHub's file server; if that is slow, the copy beside this page.
+    get('https://raw.githubusercontent.com/babarsultan009/sarparast/main/docs/s/aff5f8f796/link.json?t=' + Date.now(), 4000).catch(function () { return get('link.json?t=' + Date.now(), 10000); })
+      .then(function (j) {
+        if (!j || !/^https:\/\/[a-z0-9.-]+(:\d+)?$/i.test(j.url || '')) throw 0;
+        // Only go there if the school answers (avoids Cloudflare's error page).
+        var open = function () { location.replace(j.url + '/#/login' + (role ? '?role=' + role : '')); };
+        // Schools from 0.9.6 answer this check; older ones are opened directly.
+        return j.check ? get(j.url + '/api/health', 8000).then(open) : open();
+      })
+      .catch(offline);
+  }
+  attempt();
 })();
 </script></body></html>
