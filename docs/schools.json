@@ -2,7 +2,13 @@
   "schools": [
     {
       "code": "da09273039",
-      "name": "abc"
+      "no": "100101",
+      "name": "100101 · abc — abc"
+    },
+    {
+      "code": "da09273039",
+      "no": "100102",
+      "name": "100102 · abc — fdthgfchgndcgr"
     }
   ]
 }
