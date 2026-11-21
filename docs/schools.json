@@ -3,27 +3,37 @@
     {
       "code": "da09273039",
       "no": "100101",
-      "name": "100101 · Global — abc"
+      "school": "Global",
+      "campus": "abc",
+      "name": "Global (abc) · 100101"
     },
     {
       "code": "da09273039",
       "no": "100102",
-      "name": "100102 · Global — fdthgfchgndcgr"
+      "school": "Global",
+      "campus": "fdthgfchgndcgr",
+      "name": "Global (fdthgfchgndcgr) · 100102"
     },
     {
       "code": "00cbcfec0c",
       "no": "100301",
-      "name": "100301 · Hira Model School"
-    },
-    {
-      "code": "dbbcd36717",
-      "no": "100401",
-      "name": "100401 · White Test"
+      "school": "Hira Model School",
+      "campus": null,
+      "name": "Hira Model School · 100301"
     },
     {
       "code": "44a9e39de9",
       "no": "100501",
-      "name": "100501 · Signin Test"
+      "school": "Signin Test",
+      "campus": null,
+      "name": "Signin Test · 100501"
+    },
+    {
+      "code": "dbbcd36717",
+      "no": "100401",
+      "school": "White Test",
+      "campus": null,
+      "name": "White Test · 100401"
     }
   ]
 }
