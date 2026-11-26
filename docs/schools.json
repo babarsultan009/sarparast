@@ -15,6 +15,13 @@
       "name": "Big · 100501"
     },
     {
+      "code": "6e13265e77",
+      "no": "100801",
+      "school": "Fz School",
+      "campus": null,
+      "name": "Fz School · 100801"
+    },
+    {
       "code": "da09273039",
       "no": "100101",
       "school": "Global",
@@ -34,6 +41,20 @@
       "school": "Hira Model School",
       "campus": null,
       "name": "Hira Model School · 100301"
+    },
+    {
+      "code": "9ead0aed4a",
+      "no": "100701",
+      "school": "PT School",
+      "campus": "Main",
+      "name": "PT School (Main) · 100701"
+    },
+    {
+      "code": "9ead0aed4a",
+      "no": "100702",
+      "school": "PT School",
+      "campus": "North",
+      "name": "PT School (North) · 100702"
     },
     {
       "code": "9764881ec6",
