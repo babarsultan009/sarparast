@@ -1,6 +1,13 @@
 {
   "schools": [
     {
+      "code": "fefeed7f1c",
+      "no": "100401",
+      "school": "Big",
+      "campus": null,
+      "name": "Big · 100401"
+    },
+    {
       "code": "da09273039",
       "no": "100101",
       "school": "Global",
