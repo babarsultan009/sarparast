@@ -27,6 +27,20 @@
       "school": "PW School",
       "campus": null,
       "name": "PW School · 100401"
+    },
+    {
+      "code": "6e35d51738",
+      "no": "100801",
+      "school": "S",
+      "campus": "A",
+      "name": "S (A) · 100801"
+    },
+    {
+      "code": "6e35d51738",
+      "no": "100802",
+      "school": "S",
+      "campus": "B",
+      "name": "S (B) · 100802"
     }
   ]
 }
