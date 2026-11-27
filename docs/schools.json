@@ -62,27 +62,6 @@
       "school": "Hira Model School",
       "campus": null,
       "name": "Hira Model School · 100301"
-    },
-    {
-      "code": "9ead0aed4a",
-      "no": "100701",
-      "school": "PT School",
-      "campus": "Main",
-      "name": "PT School (Main) · 100701"
-    },
-    {
-      "code": "9ead0aed4a",
-      "no": "100702",
-      "school": "PT School",
-      "campus": "North",
-      "name": "PT School (North) · 100702"
-    },
-    {
-      "code": "9764881ec6",
-      "no": "100601",
-      "school": "S",
-      "campus": null,
-      "name": "S · 100601"
     }
   ]
 }
