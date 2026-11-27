@@ -1,13 +1,6 @@
 {
   "schools": [
     {
-      "code": "f0cd2d4a35",
-      "no": "101401",
-      "school": "Fz School",
-      "campus": null,
-      "name": "Fz School · 101401"
-    },
-    {
       "code": "da09273039",
       "no": "100101",
       "school": "Global",
